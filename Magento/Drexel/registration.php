@@ -6,4 +6,4 @@
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/skeleton', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/Drexel', __DIR__);
