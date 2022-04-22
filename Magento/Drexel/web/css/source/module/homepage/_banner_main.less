@@ -3,37 +3,36 @@
         height: 800px;
 
         h1 { 
-            color: #222; 
+            color: @color-drexel-black; 
             margin-bottom: 1rem;
         }
         p { 
-            color: #222;
+            color: @color-drexel-gray;
             margin-bottom: 3rem !important; 
         }
     }
 
     div[data-content-type="buttons"] .pagebuilder-button-link {
-        color: #222;
+        color: @color-drexel-black;
         background: transparent;
-        padding: 5px 0px;
+        padding: @indent__xs 0px;
         border: none;
-        border-bottom: 1px solid #222;
-        font-weight: 300;
+        border-bottom: 1px solid @color-drexel-black;
+        font-weight: @font-weight__light;
         cursor: pointer;
         border-radius: 0px;
         text-decoration: none;
     
         &:hover {
-            color: #222;
+            color: @color-drexel-black;
             background: transparent;
-            padding: 5px 0px;
+            padding: @indent__xs 0px;
             border: none;
-            border-bottom: 1px solid #706f74;
-            font-weight: 300;
+            border-bottom: 1px solid @color-drexel-gray;
+            font-weight: @font-weight__light;
             cursor: pointer;
             border-radius: 0px;
             text-decoration: none;
         }
     }
-    
 }
