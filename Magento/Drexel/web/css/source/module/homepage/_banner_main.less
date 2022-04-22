@@ -1,3 +1,35 @@
-.banner_main {
-    height: 500px;
+& when (@media-common = true) {
+    .banner_main {
+        height: 800px;
+
+        h1 { 
+            color: @color-drexel-black; 
+            margin-bottom: 1rem;
+        }
+        p { 
+            color: @color-drexel-gray;
+            margin-bottom: 3rem !important; 
+        }
+    }
+
+    .btn-default > div {
+        background: transparent;
+        padding: 5px 0px;
+        border: none;
+        border-bottom: 1px solid #222;
+        font-weight: 300;
+        cursor: pointer;
+        border-radius: 0px;
+    
+        &:hover {
+            background: transparent;
+            padding: 5px 0px;
+            border: none;
+            border-bottom: 1px solid #706f74;
+            font-weight: 300;
+            cursor: pointer;
+            border-radius: 0px;
+        }
+    }
+    
 }
