@@ -3,16 +3,17 @@
         height: 800px;
 
         h1 { 
-            color: @color-drexel-black; 
+            color: #222; 
             margin-bottom: 1rem;
         }
         p { 
-            color: @color-drexel-gray;
+            color: #222;
             margin-bottom: 3rem !important; 
         }
     }
 
-    .btn-default > div {
+    div[data-content-type="buttons"] .pagebuilder-button-link {
+        color: #222;
         background: transparent;
         padding: 5px 0px;
         border: none;
@@ -20,8 +21,10 @@
         font-weight: 300;
         cursor: pointer;
         border-radius: 0px;
+        text-decoration: none;
     
         &:hover {
+            color: #222;
             background: transparent;
             padding: 5px 0px;
             border: none;
@@ -29,6 +32,7 @@
             font-weight: 300;
             cursor: pointer;
             border-radius: 0px;
+            text-decoration: none;
         }
     }
     
