@@ -1,20 +1,23 @@
 .categories_main  {
     .categories_card{
-        height: 310px;
         margin-left: 15px;
         margin-right: 15px;
-        padding-left: 320px;
 
-        h2 {
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
+        .pagebuilder-banner-wrapper {
+            display: flex;
+            align-items: center;
+        
+            .pagebuilder-overlay {
+                max-width: 320px;
+            }
 
-        p {
-            color: @color-drexel-gray;
+            h2 {
+                letter-spacing: 2px;
+                margin-bottom: 1rem;
+            }
 
-            &:last-child {
-                margin-bottom: 3rem;
+            p {
+                color: @color-drexel-gray;
             }
         }
     }
