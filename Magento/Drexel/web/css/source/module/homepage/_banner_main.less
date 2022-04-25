@@ -17,7 +17,9 @@
         }
     }
 
-    div[data-content-type="buttons"] .pagebuilder-button-link, div.pagebuilder-collage-content button.pagebuilder-button-link {
+    div[data-content-type="buttons"] .pagebuilder-button-link, div.pagebuilder-collage-content button.pagebuilder-button-link, .action.primary {
+        .lib-font-size(16);
+        text-transform: uppercase;
         color: @color-drexel-black;
         background: transparent;
         padding: @indent__xs 0px;
@@ -41,5 +43,11 @@
             border-radius: 0px;
             text-decoration: none;
         }
+    }
+
+    hr[data-element="line"] {
+        width: 30px !important;
+        height: 3px;
+        background: #222;
     }
 }
