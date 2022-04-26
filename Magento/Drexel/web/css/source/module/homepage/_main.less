@@ -1,0 +1,42 @@
+& when (@media-common = true) {
+
+    div[data-content-type="buttons"] .pagebuilder-button-link, div.pagebuilder-collage-content button.pagebuilder-button-link, .action.primary {
+        .lib-font-size(16);
+        text-transform: uppercase;
+        color: @color-drexel-black;
+        background: transparent;
+        padding: @indent__xs 0px;
+        padding: 0px;
+        border: none;
+        border-bottom: 1px solid @color-drexel-black;
+        font-weight: @font-weight__light;
+        cursor: pointer;
+        border-radius: 0px;
+        text-decoration: none;
+    
+        &:hover {
+            color: @color-drexel-black;
+            background: transparent;
+            padding: @indent__xs 0px;
+            padding: 0px;
+            border: none;
+            border-bottom: 1px solid @color-drexel-gray;
+            font-weight: @font-weight__light;
+            cursor: pointer;
+            border-radius: 0px;
+            text-decoration: none;
+        }
+    }
+
+    .hr-bold hr[data-element="line"] {
+        width: 30px !important;
+        height: 3px;
+        background: @color-drexel-black;
+    }
+    
+    .pagebuilder-column-group {
+        .pagebuilder-column {
+            padding: 15px;
+        }
+    }
+}
