@@ -1,0 +1,30 @@
+& when (@media-common = true) {
+    .brands_main {
+        .brands-main__heading {
+            position: absolute;
+            width: 100%;
+            max-width: 1280px;
+            text-align: center;
+
+            h2 {
+                .lib-font-size(32);
+                background-color: @color-drexel-white;
+                color: @color-drexel-black-dark;
+                display: inline-block;
+                padding: 2px 5px;
+                margin: 0px;
+                letter-spacing: 2px;
+            }
+        }
+
+        .pagebuilder-column-group {
+            justify-content: space-around;
+            margin-top: 20px;
+
+            .pagebuilder-column {
+                width: auto !important; // edit page builder  default style
+                text-align: center;
+            }
+        }
+    }
+}
