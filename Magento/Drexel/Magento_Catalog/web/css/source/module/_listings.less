@@ -112,10 +112,10 @@
                 }
 
                 .products-grid .product-items & .product-image-container {
-                    width: 100% !important;
+                    width: 100% !important; // edit page builder  default style
 
                     .vertical-list & {
-                        width: 90px !important;
+                        width: 90px !important; // edit page builder  default style
                     }
                     
 
@@ -135,30 +135,6 @@
 
                 > * {
                     font-size: 1.4rem;
-                }
-
-                .actions-secondary {
-                    display: none;
-                    font-size: 1.4rem;
-                    vertical-align: middle;
-
-                    > button.action {
-                        .lib-button-reset();
-                    }
-
-                    > .action {
-                        &:extend(.abs-actions-addto all);
-                        &:before {
-                            margin: 0;
-                        }
-                        line-height: 35px;
-                        text-align: center;
-                        width: 100%;
-
-                        span {
-                            &:extend(.abs-visually-hidden all);
-                        }
-                    }
                 }
 
                 .actions-primary {
@@ -328,6 +304,10 @@
                             width: 90px;
                         }
                     }
+
+                    .actions-secondary {
+                        display: none;
+                    }
                 }
 
                 &-photo {
@@ -355,6 +335,47 @@
 
             .product-image-photo {
                 width: 100%;
+            }
+        }
+    }
+
+    .products-grid {
+        .product-item-info {
+            .actions-secondary {
+                position: absolute;
+                display: inline-block;
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0s, opacity 0.2s linear;
+                vertical-align: middle;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 30px;
+                padding: 15px;
+                background-color: @color-drexel-white;
+        
+                > button.action {
+                    .lib-button-reset();
+                }
+        
+                > .action {
+                    &:extend(.abs-actions-addto all);
+                    &:before {
+                        margin: 0;
+                    }
+                    line-height: 35px;
+                    text-align: center;
+                    width: 100%;
+        
+                    span {
+                        &:extend(.abs-visually-hidden all);
+                    }
+                }
+
+                .vertical-list & {
+                    display: none;
+                }
             }
         }
     }
@@ -416,13 +437,67 @@
             &.active {
                 .lib-css(background, @product-item__hover__background-color);
                 .lib-css(box-shadow, @product-item__hover__box-shadow);
-                margin: -10px;
-                padding: 10px;
                 position: relative;
                 z-index: 9;
 
+                .actions-secondary {
+                    z-index: 10;
+                    visibility: visible;
+                    opacity: .9;
+
+                    a {
+                        color: @color-drexel-black;
+
+                        &.action.product-item-link {
+                            .lib-icon-font(
+                                @_icon-font-content: @icon-search,
+                                @_icon-font-position: before,
+                                @_icon-font: @icon-font-drexel,
+                                @_icon-font-size: 1.6rem,
+                                @_icon-font-line-height: 43px,
+                                @_icon-font-color: @color-drexel-black,
+                                @_icon-font-color-hover: @color-drexel-gray,
+                                @_icon-font-color-active: @color-drexel-gray,
+                                @_icon-font-margin: 0px,
+                                @_icon-font-vertical-align: middle,
+                                @_icon-font-text-hide: inherit,
+                                @_icon-font-display: inherit
+                            );
+                        }
+
+                        &::before {
+                            .lib-font-size(16);
+                            font-family: @icon-font-drexel;
+                            color: inherit;
+                            display: inline-block;
+                            overflow: hidden;
+                            text-align: center;
+                            margin: 0px;
+                            line-height: 43px;
+                            font-weight: @font-weight__semibold;
+                            letter-spacing: .05em;
+                            display: inline-block;
+                            text-decoration: none;
+                        }
+
+                        &:hover {
+                            color: @color-drexel-gray;
+                        }
+                    }
+
+                    span {
+                        display: none;
+                    }
+                    
+
+                    .vertical-list & {
+                        display: none;
+                    }
+                }
+
                 .product-item-inner {
                     display: block;
+                    transition: 0.3s;
 
                     .vertical-list & {
                         display: none;
@@ -476,9 +551,10 @@
             margin: -@indent__s 0 @indent__s;
         }
 
-        .actions-primary + .actions-secondary {
+        .actions-primary {
             display: none;
             vertical-align: middle;
+            transition: 0.3s;
 
             > .action {
                 line-height: 35px;
@@ -493,6 +569,7 @@
 
         .actions-primary {
             display: inline-block;
+            transition: 0.3s;
         }
     }
 
