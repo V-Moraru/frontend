@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="before.body.end"/>
+        <referenceBlock name="copyright" remove="true"/>
+
+
+        <referenceContainer name="footer" htmlClass="footer-block">
+            <block class="Magento\Cms\Block\Block" name="footer.links">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-drexel</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="cms_footer_links_container" remove="true"/>
+        <referenceBlock name="form.subscribe" />
+        <referenceBlock name="footer_links" remove="true" />
+    </body>
+</page>
