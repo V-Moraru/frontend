@@ -27,3 +27,35 @@
         }
     }
 }
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .horizontal-links {
+        .pagebuilder-column-group {
+            width: 100%;
+
+            .pagebuilder-column {
+                width: 100%;
+
+                div[data-content-type="text"] {
+                    text-align: center;
+                }
+
+                &.social-links {
+                    justify-content: center !important; // edit page builder styles
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .pagebuilder-column-group {
+        width: 100%;
+
+        .pagebuilder-column {
+            width: 50%;
+        }
+    }
+}
