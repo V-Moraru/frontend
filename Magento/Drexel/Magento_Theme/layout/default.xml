@@ -11,7 +11,9 @@
         <referenceBlock name="report.bugs" remove="true"/>
         <move element="copyright" destination="before.body.end"/>
         <referenceBlock name="copyright" remove="true"/>
-
+        <referenceBlock name="header.links" remove="true" />
+        <referenceContainer name="header.panel" remove="true" />
+<!--        <move element="top.search" destination="before.header.panel.end" />-->
 
         <referenceContainer name="footer" htmlClass="footer-block">
             <block class="Magento\Cms\Block\Block" name="footer.links">
