@@ -26,7 +26,7 @@
     //  Product Lists
 
     .product-heading {
-        padding: 0px 15px;
+        padding: 0 15px;
         p {
             color: @color-drexel-gray;
         }
@@ -38,14 +38,9 @@
 
     .product {
         &-items {
-            .lib-inline-block-space-container();
-            &:extend(.abs-reset-list all);
-
-            &.widget-product-grid {
-                .lib-vendor-prefix-display(flex);
-                .lib-vendor-prefix-flex-wrap(wrap);
-                justify-content: space-between;
-            }
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+            justify-content: space-between;
 
             .vertical-list &.widget-product-grid {
                 display: block;
@@ -59,7 +54,7 @@
 
             .products-grid & {
                 width: calc(~'100% / 2');
-                margin: 0px;
+                margin: 0;
             }
 
 
@@ -95,7 +90,6 @@
 
             &-info {
                 max-width: 100%;
-                width: 152px;
                 text-align: center;
 
                 .vertical-list & {
@@ -104,10 +98,6 @@
                     .product-item-details {
                         padding-left: 15px;
                     }
-                }
-
-                .page-products & {
-                    width: 240px;
                 }
 
                 .products-grid .product-items & .product-image-container {
@@ -230,7 +220,7 @@
 
             .vertical-list .products-grid.grid & {
                 width: 100%;
-                margin-left: 0px;
+                margin-left: 0;
             }
         }
     }
@@ -310,7 +300,6 @@
                     display: table-cell;
                     padding: 0 @indent__l @indent__l 0;
                     vertical-align: top;
-                    width: 1%;
                 }
 
                 &-details {
@@ -319,7 +308,7 @@
 
                     .vertical-list & {
                         text-align: left;
-                        padding: 0px 15px;
+                        padding: 0 15px;
                     }
                 }
             }
@@ -382,7 +371,7 @@
     .products-list .product {
         &-item {
             table-layout: fixed;
-            margin: 0px;
+            margin: 0;
             padding: 15px;
 
             &-photo {
@@ -408,8 +397,7 @@
         .products-grid.grid {
             .product-items.widget-product-grid {
                 .product-item {
-                    width: calc(~'100% / 2');
-                    margin: 0px;
+                    margin: 0;
                     padding: 15px;
                     .vertical-list & {
                         width: 100%;
@@ -462,11 +450,10 @@
                             display: inline-block;
                             overflow: hidden;
                             text-align: center;
-                            margin: 0px;
+                            margin: 0;
                             line-height: 43px;
                             font-weight: @font-weight__semibold;
                             letter-spacing: .05em;
-                            display: inline-block;
                             text-decoration: none;
                         }
 
@@ -598,8 +585,7 @@
         .products-grid.grid {
             .product-items.widget-product-grid {
                 .product-item {
-                    width: calc(~'100% / 2');
-                    margin: 0px;
+                    margin: 0;
                     padding: 15px;
                     .vertical-list & {
                         width: 100%;
@@ -617,22 +603,25 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
 
-    .block.widget {
-        .products-grid.grid {
-            .product-items.widget-product-grid {
-                .product-item {
-                    width: calc(~'100% / 4');
-                    margin: 0px;
-                    padding: 15px;
+    .products-grid.grid {
+        .product-items {
+            .product-item {
+                width: calc(~'100% / 4');
+                margin: 0;
+                padding: 15px;
 
-                    &:last-child {
-                        margin-left: 0px;
-                    }
-                    .vertical-list & {
-                        width: 100%;
-                        margin: 0px;
-                        padding: 15px 0px;
-                    }
+                &:last-child {
+                    margin-left: 0;
+                }
+                .vertical-list & {
+                    width: 100%;
+                    margin: 0;
+                    padding: 15px 0;
+                }
+
+                .page-products.catalog-category-view.page-layout-category-full-width & {
+                    width: calc(~'100% / 3');
+
                 }
             }
         }

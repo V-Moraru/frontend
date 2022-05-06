@@ -42,7 +42,7 @@ use Magento\Framework\App\Action\Action;
                                         <a title="<?= $block->escapeHtmlAttr(__('Open product page')) ?>"
                                         href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>"
                                         class="action product-item-link">
-                                            <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+                                            <span><?= $block->escapeHtml(__('Open product page')) ?></span>
                                         </a>
                                         <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist): ?>
                                             <a href="#"

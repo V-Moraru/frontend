@@ -1,14 +1,12 @@
 define([
     'jquery',
-    'selectize'
+    'selectize',
+    'domReady!'
 ], function($){
     $.widget('mage.sorterSelect', {
 
         _create: function () {
-            $('#sorter').selectize({
-                create: true,
-                sortField: "text",
-            });
+
         },
 
     });
