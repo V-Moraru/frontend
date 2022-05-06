@@ -1,9 +1,4 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 /** @var $block \Magento\Catalog\Block\Product\View */
 ?>
 <?php $_product = $block->getProduct(); ?>
@@ -15,7 +10,7 @@
         <div class="field qty">
             <label class="label" for="qty"><span><?= $block->escapeHtml(__('Qty')) ?></span></label>
             <div class="control" data-mage-init='{"qty": {}}'>
-                <a href="#" class="qty-down"></a>
+                <button class="qty-down" type="button"></button>
                 <input type="number"
                        name="qty"
                        id="qty"
@@ -25,7 +20,7 @@
                        class="input-text qty"
                        data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
                        />
-                <a href="#" class="qty-up"></a>
+                <button class="qty-up" type="button"></button>
             </div>
         </div>
         <?php endif; ?>
