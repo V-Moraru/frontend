@@ -362,6 +362,103 @@
     }
 }
 
+// CATALOG PAGE
+
+// grid styles
+
+.list-category-blocks {
+    display: none;
+}
+
+// list styles
+
+.products-list {
+    .product-item {
+        margin-bottom: 50px;
+
+        .product-item-info {
+            .lib-vendor-prefix-display(flex);
+            text-align: left;
+
+            .product-item-name {
+                a {
+                    .lib-font-size(16);
+                    color: @color-drexel-black;
+                    letter-spacing: 1px;
+                    font-weight: @font-weight__semibold;
+                }
+            }
+
+            .product-item-photo {
+                width: auto;
+            }
+
+            .default-card-blocks {
+                display: none;
+            }
+
+            .list-category-blocks {
+                display: block;
+
+                .price-box {
+                    color: @color-drexel-gray;
+                    letter-spacing: 0.1rem;
+                    margin-bottom: 25px;
+
+                    .old-price {
+                        color: inherit;
+                        margin-left: 10px;
+                    }
+                }
+                .actions-list {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-box-align (center);
+
+                    .action.tocart.primary {
+                        .lib-font-size(14);
+                        color: @color-drexel-white;
+                        background-color: @color-drexel-black;
+                        padding: 15px 30px !important;
+                        line-height: 1.1;
+                        transition: background-color .2s ease-in;
+
+                        &:hover {
+                            background-color: @color-drexel-gray;
+                        }
+                    }
+                    .actions-secondary {
+                        display: block;
+
+                        a {
+                            .lib-font-size(17);
+                            width: 40px;
+                            height: 40px;
+                            line-height: 40px;
+                            text-align: center;
+                            color: @color-drexel-black;
+                            margin-left: 10px;
+                            transition: color .2s ease-in;
+
+                            span {
+                                display: none;
+                            }
+
+                            &::before {
+                                font-family: @icon-font-drexel;
+                            }
+
+                            &:hover {
+                                color: @color-drexel-gray;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 // //
 // //  Mobile
