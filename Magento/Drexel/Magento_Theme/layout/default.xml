@@ -23,6 +23,14 @@
             </block>
         </referenceContainer>
 
+        <referenceContainer name="div.sidebar.additional">
+            <block class="Magento\Cms\Block\Block" name="sidebar.promo" before="sidebar.additional">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">sidebar-promo</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
         <referenceContainer name="cms_footer_links_container" remove="true"/>
         <referenceBlock name="form.subscribe" />
         <referenceBlock name="footer_links" remove="true" />
