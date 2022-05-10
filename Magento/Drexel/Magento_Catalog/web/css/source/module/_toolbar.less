@@ -76,7 +76,7 @@
     }
 
     .sorter {
-        float: right;
+        float: left;
 
         .page-products & {
             position: absolute;
@@ -154,8 +154,9 @@
 
     .toolbar-amount {
         display: block;
-        float: left;
+        float: right;
         position: static;
+        border-bottom: 1px solid @color-drexel-black;
     }
 
     .toolbar {
@@ -168,7 +169,7 @@
     .modes {
         display: inline-block;
         float: left;
-        margin-right: @indent__base;
+        margin-right: 0;
 
         .products.wrapper ~ .toolbar & {
             display: none;
@@ -180,19 +181,16 @@
     }
 
     .modes-mode {
-        .lib-css(background-color, @toolbar-element-background);
-        .lib-css(box-shadow, @button__shadow);
-        .lib-css(color, @toolbar-element__color);
-        border: 1px solid @border-color__base;
-        border-right: 0;
+        .lib-css(background-color, @color-drexel-gray-background);
+        .lib-css(color, @color-drexel-gray);
         float: left;
         font-weight: @font-weight__regular;
         line-height: 1;
-        padding: 7px 10px;
+        padding: 8px;
         text-align: center;
 
         .modes-label + & {
-            border-radius: 3px 0 0 3px;
+            border-radius: 0;
         }
 
         &:hover {
@@ -201,22 +199,22 @@
         }
 
         &:last-child {
-            border-radius: 0 3px 3px 0;
-            border-right: 1px solid @border-color__base;
+            border-radius: 0;
+            border: none;
+            margin-left: 5px;
         }
 
         &.active {
-            .lib-css(box-shadow, @button__shadow-active);
-            background: darken(@toolbar-element-background, 7%);
-            color: @color-gray62;
+            .lib-css(background-color, @color-drexel-black);
+            .lib-css(color, @color-drexel-white);
         }
 
         .lib-icon-font(
         @icon-grid,
         @_icon-font-size: @toolbar-mode-icon-font-size,
         @_icon-font-text-hide: true,
-        @_icon-font-color: @text__color__muted,
-        @_icon-font-color-hover: @text__color__muted
+        @_icon-font-color: inherit,
+        @_icon-font-color-hover: inherit
         );
     }
 
