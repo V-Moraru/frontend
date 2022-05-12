@@ -73,7 +73,28 @@ $_helper = $block->getData('outputHelper');
                     <a href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>"
                        class="product photo product-item-photo"
                        tabindex="-1">
-                        <?= $productImage->toHtml() ?>
+                        <span class="first-product-photo">
+                            <?= $productImage->toHtml() ?>
+                        </span>
+
+                        <?php
+                        $productHoverImageAttr = $_product->getCustomAttribute( 'hover_image' );
+                        $productHoverImage = $this->helper('Magento\Catalog\Helper\Image')
+                            ->init($_product, 'hover_image')
+                            ->setImageFile($productHoverImageAttr->getValue());
+                        ?>
+
+                        <?php if ($productHoverImageAttr->getValue() != 'no_selection'): ?>
+                            <span class="second-product-photo">
+                                    <span class="product-image-container product-image-container-8">
+                                        <span class="product-image-wrapper">
+                                            <img src="<?=  $block->escapeUrl($productHoverImage->getUrl())  ?>" class="product-image-photo" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                        <?php endif; ?>
+
+
                     </a>
                     <div class="product details product-item-details">
                         <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>

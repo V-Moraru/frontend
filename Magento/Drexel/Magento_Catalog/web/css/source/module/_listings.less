@@ -330,14 +330,14 @@
                 display: inline-block;
                 visibility: hidden;
                 opacity: 0;
-                transition: visibility 0s, opacity 0.2s linear;
                 vertical-align: middle;
-                top: 50%;
+                top: 70%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
                 width: 30px;
                 padding: 15px;
                 background-color: @color-drexel-white;
+                transition: all 1s cubic-bezier(.19,1,.22,1) 0s;
                 > button.action {
                     .lib-button-reset();
                 }
@@ -395,6 +395,14 @@
 
             .default-card-blocks {
                 display: none;
+            }
+
+            .product-item-description {
+                p {
+                    .lib-font-size(13);
+                    margin-bottom: 0;
+                    color: @color-drexel-gray;
+                }
             }
 
             .list-category-blocks {
@@ -460,6 +468,25 @@
 }
 
 
+// Hover image styles
+
+.product-item-info {
+
+    .product-item-photo {
+        position: relative;
+
+        .second-product-photo {
+            position: absolute;
+            z-index: 5;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transition: all 1s cubic-bezier(.19,1,.22,1) 0s;
+        }
+    }
+}
+
+
 // //
 // //  Mobile
 // //  _____________________________________________
@@ -507,6 +534,13 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
     .product-item-info {
+        &:hover {
+            .product-item-photo {
+                .second-product-photo {
+                    opacity: 1;
+                }
+            }
+        }
         .products-grid & {
             &:hover,
             &.active {
@@ -519,6 +553,7 @@
                     z-index: 10;
                     visibility: visible;
                     opacity: .9;
+                    top: 50%;
 
                     a {
                         color: @color-drexel-black;
@@ -723,10 +758,4 @@
             }
         }
     }
-}
-
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
-
-
-
 }

@@ -60,8 +60,27 @@ use Magento\Framework\App\Action\Action;
                                 </div>
                             <?php endif; ?>
                             <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo">
-                                <?= $block->getImage($_item, $image)->toHtml() ?>
+                                <span class="first-product-photo"><?= $block->getImage($_item, $image)->toHtml() ?></span>
+
+                                <?php
+                                    $productHoverImageAttr = $_item->getCustomAttribute( 'hover_image' );
+                                    $productHoverImage = $this->helper('Magento\Catalog\Helper\Image')
+                                        ->init($_item, 'hover_image')
+                                        ->setImageFile($productHoverImageAttr->getValue());
+                                ?>
+
+                                <?php if ($productHoverImageAttr->getValue() != 'no_selection'): ?>
+                                <span class="second-product-photo">
+                                    <span class="product-image-container product-image-container-8">
+                                        <span class="product-image-wrapper">
+                                            <img src="<?=  $block->escapeUrl($productHoverImage->getUrl())  ?>" class="product-image-photo" alt="">
+                                        </span>
+                                    </span>
+                                </span>
+                                <?php endif; ?>
+
                             </a>
+
                             <div class="product-item-details">
                                 <strong class="product-item-name">
                                     <a title="<?= $block->escapeHtml($_item->getName()) ?>"
