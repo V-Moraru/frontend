@@ -6,18 +6,22 @@
  */
 ?>
 <div class="toolbar-sorter sorter">
-    <label class="sorter-label" for="sorter"><?= $block->escapeHtml(__('')) ?></label>
-    <select id="sorter" data-role="sorter" class="sorter-options" data-mage-init='{"sorterSelect": {}}'>
-        <?php foreach ($block->getAvailableOrders() as $_key => $_order) :?>
-            <option value="<?= $block->escapeHtmlAttr($_key) ?>"
-                <?php if ($block->isOrderCurrent($_key)) :?>
-                    selected="selected"
-                <?php endif; ?>
-                >
-                <?= $block->escapeHtml(__($_order)) ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
+    <label class="sorter-label" for="sorter"><?= $block->escapeHtml(__('Sort By')) ?></label>
+    <div>
+        <select id="sorter" data-role="sorter" class="sorter-options" data-mage-init='{"sorterSelect": {}}'>
+            <?php foreach ($block->getAvailableOrders() as $_key => $_order) :?>
+                <option value="<?= $block->escapeHtmlAttr($_key) ?>"
+                    <?php if ($block->isOrderCurrent($_key)) :?>
+                        selected="selected"
+                    <?php endif; ?>
+                    >
+                    <?= $block->escapeHtml(__($_order)) ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>
+<div class="direction-button">
     <?php if ($block->getCurrentDirection() == 'desc') :?>
         <a title="<?= $block->escapeHtmlAttr(__('Set Ascending Direction')) ?>"
            href="#"

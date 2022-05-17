@@ -27,7 +27,6 @@
     .toolbar {
         &:extend(.abs-add-clearfix all);
         margin-bottom: @indent__l;
-        text-align: center;
 
         select {
             .lib-css(background-color, @toolbar-element-background);
@@ -129,6 +128,57 @@
 
         .control {
             display: inline-block;
+        }
+    }
+
+    .direction-button {
+        float: right;
+        width: auto;
+        display: inline-block;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+}
+
+// toolbar sorter styles
+
+.toolbar-sorter.sorter {
+    .lib-vendor-prefix-display(flex);
+    .lib-vendor-box-align(center);
+    padding: 0 15px;
+
+    #sorter {
+        visibility: hidden;
+    }
+
+    .nice-select {
+        border: none;
+        margin: 0;
+        height: 30px;
+        padding: 0 15px;
+
+        .current {
+            display: none;
+        }
+        .list {
+            z-index: 20;
+            left: -50px;
+            border-radius: 0;
+
+            .option {
+                padding-left: 10px;
+                padding-right: 20px;
+
+                &.selected {
+                    font-weight: normal;
+                    background-color: @color-drexel-gray-border;
+                }
+
+                &:hover {
+                    background-color: @color-drexel-brown;
+                    color: @color-drexel-white;
+                }
+            }
         }
     }
 }
