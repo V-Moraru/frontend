@@ -298,7 +298,6 @@
                 &-photo {
                     width: 100%;
                     display: table-cell;
-                    padding: 0 @indent__l @indent__l 0;
                     vertical-align: top;
                 }
 
@@ -309,6 +308,9 @@
                     .vertical-list & {
                         text-align: left;
                         padding: 0 15px;
+                    }
+                    .list& {
+                        margin-left: 30px;
                     }
                 }
             }
@@ -356,6 +358,24 @@
 
                 .vertical-list & {
                     display: none;
+                }
+            }
+        }
+    }
+
+    .products-grid.grid {
+        .product-items {
+            .product-item {
+                margin: 0;
+                padding: 15px;
+
+                &:last-child {
+                    margin-left: 0;
+                }
+                .vertical-list & {
+                    width: 100%;
+                    margin: 0;
+                    padding: 15px 0;
                 }
             }
         }
@@ -471,6 +491,7 @@
 // Hover image styles
 
 .product-item-info {
+    position: relative;
 
     .product-item-photo {
         position: relative;
@@ -526,9 +547,9 @@
             .product-items.widget-product-grid {
                 .product-item {
                     margin: 0;
-                    padding: 15px;
                     .vertical-list & {
                         width: 100%;
+                        padding-left: 0;
                     }
                 }
             }
@@ -550,7 +571,6 @@
             &.active {
                 .lib-css(background, @product-item__hover__background-color);
                 .lib-css(box-shadow, @product-item__hover__box-shadow);
-                position: relative;
                 z-index: 9;
 
                 .actions-secondary {
@@ -722,7 +742,6 @@
             .product-items.widget-product-grid {
                 .product-item {
                     margin: 0;
-                    padding: 15px;
                     .vertical-list & {
                         width: 100%;
                     }
@@ -757,7 +776,6 @@
 
                 .page-products.catalog-category-view.page-layout-category-full-width & {
                     width: calc(~'100% / 3');
-
                 }
             }
         }

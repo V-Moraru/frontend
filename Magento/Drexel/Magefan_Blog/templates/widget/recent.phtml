@@ -38,7 +38,7 @@
                         </div>
                         <?php if ($_post->isPublishDateEnabled()) { ?>
                             <div class="item post-posed-date">
-                                <span class="value"><?= $block->escapeHtml($_post->getPublishDate()) ?></span>
+                                <span class="value"><?= $block->escapeHtml($_post->getPublishDate('d-M-Y')) ?></span>
                             </div>
                         <?php } ?>
 
