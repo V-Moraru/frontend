@@ -1,0 +1,68 @@
+& when (@media-common = true) {
+    .modal-window-giftr {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-box-align(center);
+
+        .modal-inner-wrap {
+            height: 250px;
+            max-width: 500px;
+            overflow: initial;
+
+            .modal-title {
+                border: none;
+            }
+
+            .modal-content {
+                .registries {
+                    height: 50px;
+                }
+                .nice-select {
+                    .lib-font-size(18);
+                    display: block;
+                    width: 100%;
+                    border: solid 1px @color-drexel-black;
+                    height: 52px;
+                    line-height: 50px;
+
+                    &:hover {
+                        border-color: @color-darkie-gray;
+                    }
+
+                    ul {
+                        width: 100%;
+
+                        li {
+                            margin-bottom: 0;
+                            line-height: 50px;
+
+                            &.option.selected {
+                                font-weight: normal;
+                            }
+                        }
+                    }
+                }
+
+                a#confirm-add-to-registry {
+                    .lib-font-size(20);
+                    color: @color-drexel-white;
+                    font-family: @font-family-name__poppins-semibold;
+                    font-weight: @font-weight__semibold;
+                    background-color: @color-drexel-black;
+                    display: block;
+                    width: 100%;
+                    margin-top: 20px;
+                    text-align: center;
+                    padding: 15px 0;
+                    border-radius: 5px;
+                    text-transform: uppercase;
+                    transition: all .2s ease-in;
+
+                    &:hover {
+                        text-decoration: none;
+                        background-color: @color-darkie-gray;
+                    }
+                }
+            }
+        }
+    }
+}
