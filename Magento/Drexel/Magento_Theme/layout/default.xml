@@ -1,19 +1,23 @@
 <?xml version="1.0"?>
+
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="header.panel">
-            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
                 <arguments>
-                    <argument name="css_class" xsi:type="string">header links</argument>
+                    <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                    <argument name="sortOrder" xsi:type="number">110</argument>
                 </arguments>
             </block>
+            <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Create an Account</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link"
+                   template="Magento_Customer::account/link/authorization.phtml"/>
         </referenceContainer>
-        <referenceBlock name="report.bugs" remove="true"/>
-        <move element="copyright" destination="before.body.end"/>
-        <referenceBlock name="copyright" remove="true"/>
-        <referenceBlock name="header.links" remove="true" />
-        <referenceContainer name="header.panel" remove="true" />
-<!--        <move element="top.search" destination="before.header.panel.end" />-->
 
         <referenceContainer name="footer" htmlClass="footer-block">
             <block class="Magento\Cms\Block\Block" name="footer.links">
@@ -31,6 +35,10 @@
             </block>
         </referenceContainer>
 
+        <move element="top.search" destination="header-wrapper" after="logo" />
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceContainer name="header.panel" remove="true" />
         <referenceContainer name="cms_footer_links_container" remove="true"/>
         <referenceBlock name="form.subscribe" />
         <referenceBlock name="footer_links" remove="true" />

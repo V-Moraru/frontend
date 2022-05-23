@@ -51,13 +51,18 @@
             @_icon-font-size: 22px,
             @_icon-font-line-height: 28px,
             @_icon-font-margin: 0 @indent__s 0 0,
-            @_icon-font-color: @header-icons-color,
-            @_icon-font-color-hover: @header-icons-color-hover,
-            @_icon-font-color-active: @header-icons-color-hover,
+            @_icon-font-color: @color-drexel-black,
+            @_icon-font-color-hover: @color-drexel-gray,
+            @_icon-font-color-active: @color-drexel-gray,
             @_icon-font-text-hide: true
             );
             display: inline-block;
             float: right;
+
+            &::before {
+                cursor: pointer;
+                transition: color .2s ease-in;
+            }
 
             &.active {
                 + .control {
