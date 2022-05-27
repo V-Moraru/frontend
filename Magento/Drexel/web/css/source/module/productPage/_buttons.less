@@ -1,0 +1,22 @@
+& when (@media-common = true) {
+    .catalog-product-view.page-layout-product-full-width {
+        .action.tocart.primary {
+            .lib-font-size(14);
+            color: @color-drexel-white;
+            background-color: @color-drexel-black;
+            padding: 15px 30px !important;
+            line-height: 1.1;
+            transition: background-color .2s ease-in;
+
+            &:hover {
+                background-color: @color-drexel-gray;
+            }
+        }
+
+        .product-social-links {
+            a {
+                margin-right: 15px;
+            }
+        }
+    }
+}
