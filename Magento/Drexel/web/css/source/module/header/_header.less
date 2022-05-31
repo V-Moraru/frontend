@@ -9,7 +9,7 @@
 
             .my-account-link li {
                 float: right;
-                padding: 5px;
+                padding: 5px 0;
                 margin-right: 15px;
                 list-style: none;
 
@@ -24,6 +24,27 @@
                     }
                 }
             }
+
+            // wish list styles
+
+            .my-account-link {
+                .link.wishlist a {
+                    .lib-icon-font(
+                        @_icon-font-content: @icon-wishlist-full,
+                        @_icon-font-position: before,
+                        @_icon-font: @icon-font-drexel
+                    );
+
+                    &::before {
+                        width: 20px;
+                    }
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
 
 
 

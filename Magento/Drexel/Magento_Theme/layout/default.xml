@@ -5,6 +5,7 @@
 
         <referenceContainer name="header-wrapper">
             <container name="header-wrapper.ul.account-link" htmlTag="ul" htmlClass="my-account-link" >
+                <block class="Magento\Wishlist\Block\Link" name="wish-list-link" before="my-account-link" />
                 <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
                     <arguments>
                         <argument name="label" xsi:type="string" translate="true">My Account</argument>
