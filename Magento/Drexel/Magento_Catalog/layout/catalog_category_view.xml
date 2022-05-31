@@ -4,5 +4,13 @@
     <body>
         <referenceBlock name="page.main.title" remove="true"/>
         <block class="Magento\Catalog\Block\Category\Rss\Link" name="rss.link" template="Magento_Catalog::category/rss.phtml"/>
+
+        <referenceContainer name="div.sidebar.additional">
+            <block class="Magento\Cms\Block\Block" name="sidebar.promo" before="sidebar.additional">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">sidebar-promo</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
     </body>
 </page>
