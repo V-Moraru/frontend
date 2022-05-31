@@ -25,7 +25,7 @@ define([
 
         getData: function() {
             var data = $('#product_addtocart_form').serializeArray();
-            var selectedItem = $("select[name=\"listGiftr\"] option:selected");
+            var selectedItem = $("select[name=\"listGiftr\"] option:selected"); // read value from select
 
             data.push({name: 'registries', value: selectedItem.val()});
 
@@ -44,7 +44,7 @@ define([
                 dataType: 'json',
                 showLoader: true,
                 success: function (response) {
-                    $('#giftr-modal').modal('closeModal');
+                    $('#giftr-modal').modal('closeModal'); // close modal window
                     if (response.status == this.login) {
                         setLocation(response.message);
                     }
