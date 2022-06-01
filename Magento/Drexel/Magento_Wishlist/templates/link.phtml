@@ -8,9 +8,10 @@
 ?>
 <li class="link wishlist" data-bind="scope: 'wishlist'">
     <a <?= /* @noEscape */ $block->getLinkAttributes() ?>>
-        <span>
-            <?= $block->escapeHtml($block->getLabel()) ?>
-        </span>
+        <span class="counter-label"><?= $block->escapeHtml($block->getLabel()) ?></span>
+        <!-- ko if: wishlist().counter -->
+        <span data-bind="text: wishlist().items.length" class="counter qty"></span>
+        <!-- /ko -->
     </a>
 </li>
 <script type="text/x-magento-init">
