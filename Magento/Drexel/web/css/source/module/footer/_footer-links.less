@@ -27,29 +27,49 @@
         ul {
             padding-left: 0;
             overflow: hidden;
+            list-style: none;
 
             li {
-                margin-left: 0;
-                transition: margin-left .3s ease-in;
-
-                &:hover {
-                    margin-left: 20px;
-                }
+                position: relative;
 
                 a {
                     color: @color-drexel-gray;
-                    transition: color .3s ease-in;
+                    padding-left: 0;
+                    transition: all .3s ease-in;
 
+                    .lib-icon-font(
+                        @icon-dot,
+                        @_icon-font-position: before
+                    );
 
-                    &:hover {
-                        color: @color-drexel-black;
-                        text-decoration: none;
+                    &::before {
+                        .lib-font-size(20);
+                        font-weight: @font-weight__bold;
+                        color: @color-drexel-gray;
+                        line-height: 18px;
+                        vertical-align: top;
+                        opacity: 0;
+                        padding-right: 0;
+                        transition: all .3s ease;
+                        position: absolute;
+                        left: 0;
                     }
                 }
 
-                &::marker {
-                    color: @color-drexel-gray;
+
+                &:hover {
+                    a {
+                        color: @color-drexel-black;
+                        text-decoration: none;
+                        padding-left: 15px;
+
+                    }
+
+                    a::before {
+                        opacity: 1;
+                    }
                 }
+
             }
 
         }
