@@ -13,7 +13,6 @@
             <action method="setText">
                 <argument name="text" translate="true" xsi:type="string">Text</argument>
             </action>
-            <block class="Magento\Theme\Block\Html\Footer" name="footer_links_drexel" template="html/footer.phtml"/>
         </referenceContainer>
         <referenceBlock name="report.bugs" remove="true"/>
     </body>
