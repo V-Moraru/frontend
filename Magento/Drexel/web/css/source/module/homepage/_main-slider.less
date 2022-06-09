@@ -1,22 +1,24 @@
 & when (@media-common = true) {
     .main-slider {
-        [data-appearance='collage-left'] .pagebuilder-slide-wrapper .pagebuilder-overlay {
-            .lib-vendor-prefix-display(flex);
-            .lib-vendor-box-align(center);
-            height: 800px;
-            max-width: 1280px;
-            margin: auto;
+        [data-appearance='collage-left'] {
+            .pagebuilder-slide-wrapper .pagebuilder-overlay {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-box-align(center);
+                min-height: 800px;
+                max-width: 1280px;
+                margin: auto;
 
-            .pagebuilder-collage-content {
-                padding: 15px;
-                background-color: @color-drexel-background-overlay;
+                .pagebuilder-collage-content {
+                    padding: 15px;
+                    background-color: @color-drexel-background-overlay;
 
-                h1 {
-                    margin-bottom: 0;
-                }
+                    h1 {
+                        margin-bottom: 0;
+                    }
 
-                p {
-                    color: @color-drexel-gray;
+                    p {
+                        color: @color-drexel-gray;
+                    }
                 }
             }
         }
