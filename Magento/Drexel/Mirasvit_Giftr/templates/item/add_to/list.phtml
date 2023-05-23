@@ -1,0 +1,40 @@
+<?php
+/**
+ * @var $block \Mirasvit\Giftr\Block\Item\Add
+ */
+
+/*
+ Remove dropdown widget and init modal widget
+ Remove checkbox list, add select with options
+*/
+
+?>
+
+<div class="giftr-list giftr-modal" style="display: none"
+     id="giftr-modal"
+     data-role="content"
+     data-bind="scope: 'giftr-addto__form',
+     mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Select gift registry',
+            'trigger': '#addto-giftr',
+            'responsive': true,
+            'buttons': [],
+            'innerScroll': false,
+            'modalClass': 'modal-window-giftr'
+        }}">
+
+    <div class="registry-list content" data-bind="visible: hasRegistries">
+        <div class="registries">
+            <select name="listGiftr" id="selectGiftr" data-bind="foreach: registries, mageInit: {'niceSelect':{}}">
+                <option value="" id="registry_" name="registries[]" data-bind="selected: selected, text: label, value: value, attr: { id: 'registry_' + value }"></option>
+            </select>
+        </div>
+        <a id="confirm-add-to-registry" href="#" data-bind="click: addProduct"><?= __('Add to gift registry') ?></a>
+    </div>
+
+    <div data-bind="visible: isMessageVisible()">
+        <span data-bind="html: getMessage()"></span>
+    </div>
+</div>

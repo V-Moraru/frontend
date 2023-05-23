@@ -1,0 +1,46 @@
+& when (@media-common = true) {
+
+    .sale-block > div {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    div[data-content-type="buttons"] .pagebuilder-button-link, div.pagebuilder-collage-content button.pagebuilder-button-link, .action.primary, .pagebuilder-poster-content .pagebuilder-slide-button.pagebuilder-button-link {
+        .lib-font-size(16);
+        text-transform: uppercase;
+        color: @color-drexel-black;
+        background: transparent;
+        padding: 0 0 10px 0 !important; //edit default styles
+        border: solid @color-drexel-black;
+        border-width: 0 0 1px 0;
+        font-weight: @font-weight__light;
+        cursor: pointer;
+        border-radius: 0;
+        text-decoration: none;
+        width: auto;
+
+        &:hover, &:active, &:focus {
+            color: @color-drexel-black;
+            background: transparent;
+            padding: 0 0 10px 0 !important; //edit default styles
+            border: solid @color-drexel-gray;
+            border-width: 0 0 1px 0;
+            cursor: pointer;
+            border-radius: 0;
+            text-decoration: none;
+            width: auto;
+        }
+    }
+
+    .hr-bold hr[data-element="line"] {
+        width: 30px !important;
+        height: 3px;
+        background: @color-drexel-black;
+    }
+
+    .pagebuilder-column-group {
+        .pagebuilder-column {
+            padding: 15px;
+        }
+    }
+}

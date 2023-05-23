@@ -1,0 +1,170 @@
+& when (@media-common = true) {
+    .page-header {
+        margin-bottom: 0;
+
+        .header.content {
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-box-align(center);
+            padding: 0;
+            height: 100px;
+
+            .logo {
+                margin: 0;
+            }
+
+            .sections.nav-sections {
+                margin: auto;
+            }
+
+            .my-account-link {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-box-align(center);
+                margin: 0;
+                padding: 0;
+            }
+
+            // LOGIN LINK STYLES
+
+            .my-account-link li {
+                margin: 5px 10px;
+                margin-right: 15px;
+                list-style: none;
+
+                a {
+                    color: @color-drexel-black;
+                    text-transform: uppercase;
+                    transition: color .2s ease-in;
+
+                    &:hover {
+                        color: @color-drexel-gray;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            // wish list styles
+
+            .my-account-link {
+                .link.wishlist a {
+                    .lib-icon-font(
+                        @_icon-font-content: @icon-wishlist-full,
+                        @_icon-font-position: before,
+                        @_icon-font: @icon-font-drexel
+                    );
+
+                    &::before {
+                        width: 20px;
+                    }
+
+                    .counter-label {
+                        display: none;
+                    }
+
+                    .counter.qty {
+                        color: @color-drexel-black;
+                        margin-left: 5px;
+                    }
+                }
+            }
+
+
+
+            // MINICART STYLES
+
+            .minicart-wrapper {
+                margin: 0 15px;
+
+                .action.showcart, .action.showcart.active {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-box-align(center);
+                    height: 30px;
+
+                    .text {
+                        display: block;
+                        position: relative;
+                        height: auto;
+                        width: auto;
+                        color: @color-drexel-black;
+                        text-transform: uppercase;
+                        transition: color .2s ease-in;
+
+                        &:hover {
+                            color: @color-drexel-gray;
+                        }
+                    }
+
+                    .counter.qty {
+                        background-color: transparent;
+                        color: @color-drexel-black;
+                        margin: 0;
+                        padding-left: 10px;
+
+                        .counter-number {
+                            text-shadow: none;
+
+                            &::before {
+                                content: '(';
+                                padding: 2px;
+                            }
+
+                            &::after {
+                                content: ')';
+                                padding: 2px;
+                            }
+                        }
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    // NAVIGATION STYLES
+
+    .nav-sections {
+        background: transparent;
+
+        nav.navigation {
+            background: inherit;
+            margin: auto;
+
+            li.level-top {
+                a {
+                    line-height: 30px;
+                    color: @color-drexel-black;
+                    text-transform: uppercase;
+                    font-weight: @font-weight__semibold;
+                    transition: color .2s ease-in;
+
+                    &:hover {
+                        color: @color-drexel-gray;
+                    }
+                }
+
+                &.active {
+                    & > a {
+                        border: none;
+                        color: @color-drexel-gray;
+                    }
+                }
+
+                .submenu {
+                    a {
+                        color: @color-drexel-black;
+
+                        &:hover {
+                            color: @color-drexel-black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

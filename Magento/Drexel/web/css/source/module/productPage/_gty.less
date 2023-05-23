@@ -1,0 +1,39 @@
+& when (@media-common = true) {
+    .field.qty {
+        .control {
+
+            a {
+                display: inline-block;
+                padding: @indent__xs @indent__s;
+                border: 1px solid @color-drexel-gray;
+                color: @color-drexel-black;
+                transition: color .1s ease-in;
+
+                &:active {
+                    color: @color-darkie-gray;
+                }
+            }
+            input {
+                border: 1px solid @color-drexel-gray;
+                color: @color-drexel-black;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .qty-down {
+                .lib-icon-font(
+                    @_icon-font-content: @icon-arrow-down,
+                    @_icon-font-position: before
+                );
+            }
+            .qty-up {
+                .lib-icon-font(
+                    @_icon-font-content: @icon-arrow-up,
+                    @_icon-font-position: before
+                );
+            }
+        }
+    }
+}
